@@ -3,7 +3,7 @@ import nock from 'nock';
 
 import app from '../src/app';
 
-it('should parse a valid XML file at a valid URL', async () => {
+test('should parse a valid XML file at a valid URL', async () => {
     nock('https://local.domain')
     .get('/posts.xml')
     .replyWithFile(200, "./e2e/test-posts.xml", {
@@ -20,7 +20,7 @@ it('should parse a valid XML file at a valid URL', async () => {
     expect(response.body).toHaveProperty('details');
 });
 
-it('should fail gracefully if there is any problem', async () => {
+test('should fail gracefully if there is any problem', async () => {
     nock('https://local.domain')
     .get('/posts.xml')
     .replyWithError("ERROR_MESSAGE");
