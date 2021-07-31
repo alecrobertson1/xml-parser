@@ -2,7 +2,6 @@ import https from 'https';
 import fs from 'fs';
 
 import { FileDownloadService } from "./file-download.service";
-import { EventEmitter } from 'stream';
 
 let mockWriteStream = {
     on: jest.fn().mockImplementation((event: string, handler: () => void) => {
