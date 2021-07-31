@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc",
     "test": "jest",
-    "start": "node dist/server.js"
+    "start": "node --max-old-space-size=512 dist/server.js"
   },
   "author": "Alec Robertson",
   "license": "ISC",
