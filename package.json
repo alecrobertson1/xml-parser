@@ -2,14 +2,40 @@
   "name": "xml-parser",
   "version": "0.0.1",
   "description": "A simple server that can parse and output information about XML files",
-  "main": "server.ts",
+  "main": "dist/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "test": "jest",
+    "start": "node dist/server.js"
   },
   "author": "Alec Robertson",
   "license": "ISC",
   "repository": {
     "type": "git",
     "url": ""
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "sax": "^1.2.4",
+    "supertest": "^6.1.4"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/jest": "^26.0.24",
+    "@types/nock": "^11.1.0",
+    "@types/node": "^16.4.6",
+    "@types/sax": "^1.2.3",
+    "babel": "^6.23.0",
+    "jest": "^27.0.6",
+    "mockserver-client": "^5.11.2",
+    "mockserver-node": "^5.11.2",
+    "nock": "^13.1.1",
+    "ts-jest": "^27.0.4",
+    "typescript": "^4.3.5",
+    "@babel/core": "^7.14.8",
+    "@babel/preset-env": "^7.14.8",
+    "@babel/preset-typescript": "^7.14.5",
+    "@types/supertest": "^2.0.11",
+    "babel-jest": "^27.0.6"
   }
 }
