@@ -16,6 +16,8 @@ export class XmlParserService {
     private totalPosts: number = 0;
     private totalScore: number = 0;
 
+    private totalAcceptedPosts: number = 0;
+
     public parse(filePath: string): Promise<XmlParsed> {
         return new Promise<XmlParsed>((resolve, reject) => {
             let stream = fs.createReadStream(filePath);
@@ -31,6 +33,7 @@ export class XmlParserService {
                     firstPost: this.firstPost,
                     lastPost: this.lastPost,
                     totalPosts: this.totalPosts,
+                    totalAcceptedPosts: this.totalAcceptedPosts,
                     avgScore: this.totalScore / this.totalPosts
                 }
     
@@ -68,6 +71,11 @@ export class XmlParserService {
             }
             case 'score'.toUpperCase(): {
                 this.totalScore += Number.parseInt(attribute.value);
+
+                break;
+            }
+            case 'acceptedanswerid'.toUpperCase(): {
+                this.totalAcceptedPosts++;
 
                 break;
             }
